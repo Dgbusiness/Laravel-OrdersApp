@@ -9,7 +9,11 @@
 <body>
     <div class="container">
         <div class="row">
+
+            {{-- Con esta plantilla se crean nuevas ordenes --}}
             <div class="col-md-12"><h2>Nueva orden para {{ $data['user']->name }}</h2></div>
+
+            {{-- Se solicitan los datos necesarios para crear la orden. --}}
             <div class="col-md-12">
                 <form method="post" action="/orders" >
                     {{ csrf_field() }}

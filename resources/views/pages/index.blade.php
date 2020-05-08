@@ -19,9 +19,13 @@
     <title>Document</title>
 </head>
 <body>
+
+    {{-- Se listan los usuarios. --}}
     <div class="container">
         <h1>Lista de usuarios</h1>
     </div>
+
+    
     <div class="container">
         @foreach ($users as $user)           
             <div class="row"><h3><a href="/{{ $user->id }}/show">{{ $user->name }}</a></h3></div>

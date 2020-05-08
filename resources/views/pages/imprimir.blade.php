@@ -1,3 +1,5 @@
+{{-- La plantilla del PDF a imprimir --}}
+
 <h2>Orden ID: {{ $order->id }}</h2>
 <h2>Usuario: {{ $order->users()->first()->name }}</h2>
 <h2>Estatus: {{ $order->estatus }}</h2>

@@ -46,13 +46,9 @@ class clientsController extends Controller
      */
     public function show($id)
     {
-        //
+        //Con este controlador se trae al usuario seleccionado
         $user = User::find($id);
-        $orders = array();
-        foreach ($user->orders as $order) {
-            array_push($orders, $order);
-        }
-        return view('pages.client')->with('data', ['orders' => $orders, 'user' => $user]);
+        return view('pages.client')->with('data', ['user' => $user]);
     }
 
     /**

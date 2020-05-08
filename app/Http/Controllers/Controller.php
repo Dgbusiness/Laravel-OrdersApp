@@ -14,6 +14,7 @@ class Controller extends BaseController
 
     public function index()
     {
+        //Muestra la lista de usuarios.
         $users = User::get();
         return view('pages.index')->with('users', $users);
     }

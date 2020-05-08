@@ -9,6 +9,7 @@ use Illuminate\Queue\SerializesModels;
 
 class OrderCreatedMail extends Mailable
 {
+    //Esta clase se crea para enviar la notificación al usuario por email.
     use Queueable, SerializesModels;
 
     /**

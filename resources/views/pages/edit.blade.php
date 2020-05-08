@@ -9,7 +9,11 @@
 <body>
     <div class="container">
         <div class="row">
+
+            {{-- Con esta plantilla se editan las ordenes --}}
             <div class="col-md-12"><h2>Editar orden {{ $data['order']->id }}</h2></div>
+
+            {{-- Se solicitan los datos necesarios para editar la orden. --}}
             <div class="col-md-12">
                 <form method="post" action="/orders/{{ $data['order']->id}}" >
                     {{ csrf_field() }}

@@ -3,7 +3,7 @@
 <style>
     .col-md-12 {
         border-radius: 2vh;
-        background-color:rgba(128, 128, 128, 0.4);
+        background-color:rgba(205, 223, 254, 0.4);
         padding-top: 1vh;
         padding-bottom: 1vh;
     }
@@ -27,20 +27,24 @@
 <body>
     <div class="container">
         <div class="row">
+
+            {{-- Nombre del usuario con la opción para crear nuevas ordenes. --}}
             <div class="col-md-12">
                 <h2>Usuario: {{ $data['user']->name }}</h2>
                 <button><a href="/{{ $data['user']->id }}/create">CREAR ORDEN</a></button>
             </div>
+
+            {{-- Se listan todas lar ordenes asociadas al usuario --}}
             <div class="col-md-12">
                 <div class="row">
-                    @if (!empty($data['orders']))
+                    @if ($data['user']->orders())
                         <div class="col-md-8 row">
                             <div class="col-md-3">Estatus</div>
                             <div class="col-md-3">Total</div>
                             <div class="col-md-3">Impuestos</div>
                             <div class="col-md-3">Comentarios</div>  
                         </div>
-                        @foreach ($data['orders'] as $order)
+                        @foreach ($data['user']->orders as $order)
                             <div class="col-md-8 row">
                                 <div class="col-md-3">{{ $order->estatus }}</div>
                                 <div class="col-md-3">{{ $order->total }}</div>
@@ -53,6 +57,8 @@
                                     @endforeach                          
                                 </div>
                             </div>
+
+                            {{-- Botones para editar, eliminar y descargar detalles de ordenes en PDF --}}
                             <div class="col-md-4">
                                 <div class="row">
                                     <div class="col-md-6">

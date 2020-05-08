@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class imprimirController extends Controller
 {
-    //
+    //Se imprime el pdf utilizando la información de la orden que se recibe.
     public function imprimir($id){
         
         $order = Order::find($id);
